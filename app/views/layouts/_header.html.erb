@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+  <%= link_to 'CalenDear', root_path, class:"navbar-brand" %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+    <span class="navbar-toggler-icon"></span>
+
+  </button>
+
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%= link_to 'View Tasks', tasks_path, class:"nav-link" %>
+      </li>
+
+      <li class="nav-item">
+        <%= link_to 'View Categories', categories_path, class:"nav-link" %>
+      </li>
+
+      <li class="nav-item">
+        <%= link_to 'Add Task', new_task_path, class:"nav-link" %>
+      </li>
+
+      <li class="nav-item">
+        <%= link_to 'Add Category', new_category_path, class:"nav-link" %>
+      </li>
+    </ul>
+
+  <div class="dropdown">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      User (code in progress)
+    </a>
+
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <a class="dropdown-item" href="#">Login</a>
+      <a class="dropdown-item" href="#">Sign out</a>
+      <a class="dropdown-item" href="#">User Info</a>
+    </div>
+  </div>
+</div>
+</nav>

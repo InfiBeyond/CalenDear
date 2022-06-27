@@ -1,0 +1,30 @@
+<div class="card" id="<%= dom_id task %>"  style="width: auto; max-width: 455px; ">
+  <div class="card-body">
+    <h5 class="card-title">
+      <%= task.title %>
+      <%= link_to '<i class="fas fa-pencil-alt"></i>'.html_safe, edit_task_path(task), style:"font-size: 15px;"%>
+    </h5>
+    <h6 class="card-subtitle mb-2 text-muted">Date created: <%= task.date_created %></h6>
+
+    <p class="card-text"><%= task.description %></p>
+    <p class="card-text"><%= task.due_date %></p>
+
+    <% if task.is_complete == true %>
+    <p class="card-text">
+      <strong>Completion status:</strong>
+      <i class="fas fa-check", style="color: #03919b;"></i>
+    </p>
+    <% else %>
+      <p class="card-text">
+        <strong>Completion status:</strong>
+        <i class="fas fa-times", style="color: #d70f64;"></i>
+      </p>
+    <% end %>
+
+    <p class="card-text"><%= render task.category %></p>
+
+    <%= button_to 'Delete task', task, method: :delete, class:"card-button" %>
+  </div>
+
+</div>
+ 
