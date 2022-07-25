@@ -11,12 +11,16 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="field">
     <%= form.label :title, style: "display: block" %>
     <%= form.text_field :title %>
   </div>
 
   <div>
+    <%= form.number_field :user_id, id: :task_user_id, value:current_user.id, type: :hidden %>
+  </div>
+
+  <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>

@@ -1,0 +1,30 @@
+.background{
+	height: 100vh;
+	width: 100vw;
+	max-width: 150vw;
+	width: 100vw;
+	margin: 0; 
+	background-color: #03919b;
+	background-image: linear-gradient(315deg, #5EBD3E 0%, #FFB900 20%, #F78200 30%, #E23838 40%,  #973999 65%, #009CDF 100%);
+	box-sizing:border-box;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-card{
+	width: fit-content;
+	padding-top: 25px;
+	padding-bottom: 10px;
+	padding-left: 50px;
+	padding-right: 50px;
+	justify-content: center;
+	background-color: rgba(255,255,255,0.80);
+	border: none;
+	border-radius: 25px;
+}
+
+.user-card a{
+	color: #F78200;
+	cursor: pointer;
+}

@@ -1,11 +1,29 @@
 class TasksController < ApplicationController
   before_action :set_task, only: %i[ show edit update destroy ]
-  before_action :set_categories
+  before_action :authenticate_user!, :set_categories
 
   # GET /tasks or /tasks.json
   def index
-    @tasks = Task.all
+    @tasks = Task.select{|t| t.user == current_user}
   end
+
+  def incomplete
+    @incomplete_tasks = Task.where({is_complete: false})
+  end
+
+  def due
+    date = Date.today
+    week_later_date = date + 7
+    @due_tasks = Task.where({due_date: (date..week_later_date)})
+  end
+
+  def overdue
+    tasks = Task.select{|t| t.user == current_user}
+    date = Date.today
+    all_overdue_tasks = Task.where("due_date < ?", date)
+    @overdue_tasks = all_overdue_tasks.where({is_complete: false})
+  end
+
 
   # GET /tasks/1 or /tasks/1.json
   def show
@@ -70,6 +88,6 @@ class TasksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def task_params
-      params.require(:task).permit(:title, :description, :date_created, :due_date, :is_complete, :category_id)
+      params.require(:task).permit(:title, :description, :date_created, :due_date, :is_complete, :user_id, :category_id)
     end
 end

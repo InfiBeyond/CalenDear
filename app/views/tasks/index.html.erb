@@ -1,14 +1,15 @@
 <script src="https://kit.fontawesome.com/9c7f3e0783.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
 
 <h2 style="font-family: 'DejaVu', monospace;">Task overview</h2>
 <p style="color: green"><%= notice %></p>
 
-<% if @tasks.exists? %>
-  <div class="card-columns", style="display: inline-block; column-count: auto;">
-  <% @tasks.each do |task| %>
-    <%= render task %>
-  <% end %>
-</div>
+<% if @tasks.length > 0 %>
+  <div class="card-columns">
+    <% @tasks.each do |task| %>
+      <%= render task %>
+    <% end %>
+  </div>
 
 <% else %>
   <p>Hooray! You're all done!🎉</p>

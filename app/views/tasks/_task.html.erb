@@ -1,4 +1,5 @@
-<div class="card" id="<%= dom_id task %>"  style="width: auto; max-width: 455px; ">
+<link rel="stylesheet" href="app/assets/stylesheets/task_index.css">
+<div class="card" id="<%= dom_id task %>">
   <div class="card-body">
     <h5 class="card-title">
       <%= task.title %>
@@ -12,12 +13,12 @@
     <% if task.is_complete == true %>
     <p class="card-text">
       <strong>Completion status:</strong>
-      <i class="fas fa-check", style="color: #03919b;"></i>
+      <i class="fas fa-check", style="color: #5EBD3E;"></i>
     </p>
     <% else %>
       <p class="card-text">
         <strong>Completion status:</strong>
-        <i class="fas fa-times", style="color: #d70f64;"></i>
+        <i class="fas fa-times", style="color: #E23838;"></i>
       </p>
     <% end %>
 
